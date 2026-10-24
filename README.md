@@ -1,1 +1,1 @@
-# students_dropout-_prediction_project
+# students_dropout_prediction_project
