@@ -1,0 +1,2 @@
+trial_id,config/lr,config/dropout,config/mlp_layer,config/mlp_hid,config/nemb,config/alpha,config/arm_hid,config/ensemble,val_acc,val_loss,test_acc,test_loss,size,epoch
+0,0.001,0.0,2,64,16,2.0,256,True,0.8487584650112867,1.0549428462982178,0.8481012658227848,1.0576526801527948,324247,1
