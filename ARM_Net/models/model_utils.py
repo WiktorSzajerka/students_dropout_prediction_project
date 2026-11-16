@@ -1,11 +1,11 @@
 import torch
 import torch.nn as nn
-from models.lr import LRModel, LR_CONFIG
-from models.fm import FMModel, FM_CONFIG
-from models.dnn import DNNModel, DNN_CONFIG
-from models.snn import SNN, SNN_CONFIGS
-from models.armnet import ARMNetModel, ARM_CONFIG
-from models.perceiverio import PerceiverTab, PERCEIVER_CONFIG
+from ARM_Net.models.lr import LRModel, LR_CONFIG
+from ARM_Net.models.fm import FMModel, FM_CONFIG
+from ARM_Net.models.dnn import DNNModel, DNN_CONFIG
+from ARM_Net.models.snn import SNN, SNN_CONFIGS
+from ARM_Net.models.armnet import ARMNetModel, ARM_CONFIG
+from ARM_Net.models.perceiverio import PerceiverTab, PERCEIVER_CONFIG
 
 
 def create_model(config, logger=None, verbose=False):

@@ -1,7 +1,7 @@
 from ray import tune
 import torch
 from einops import rearrange
-from models.layers import Embedding, Linear, FactorizationMachine, MLP
+from ARM_Net.models.layers import Embedding, Linear, FactorizationMachine, MLP
 
 
 FM_CONFIG = {

@@ -2,7 +2,7 @@ from ray import tune
 from einops.layers.torch import Rearrange
 import torch
 import torch.nn as nn
-from models.layers import Embedding, MLP
+from ARM_Net.models.layers import Embedding, MLP
 
 
 DNN_CONFIG = {

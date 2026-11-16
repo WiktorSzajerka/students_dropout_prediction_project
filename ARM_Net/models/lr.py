@@ -2,7 +2,7 @@ from ray import tune
 import torch
 import torch.nn as nn
 from einops import rearrange
-from models.layers import Linear
+from ARM_Net.models.layers import Linear
 
 
 LR_CONFIG = {

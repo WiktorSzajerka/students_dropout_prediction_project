@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import sklearn.model_selection
 import sklearn.preprocessing
-from utils.uci_utils import nsample_bsz_mapping
+from ARM_Net.utils.uci_utils import nsample_bsz_mapping
 
 
 def csv_loader(csv_path, batch_size=0, valid_perc=0.15, workers=2,

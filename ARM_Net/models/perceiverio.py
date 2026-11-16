@@ -8,7 +8,7 @@ import torch.nn.functional as F
 
 from einops import rearrange, repeat
 
-from models.layers import Embedding
+from ARM_Net.models.layers import Embedding
 
 # helpers
 

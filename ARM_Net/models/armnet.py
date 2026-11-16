@@ -1,8 +1,8 @@
 from ray import tune
 import torch
 import torch.nn as nn
-from utils.entmax import EntmaxBisect
-from models.layers import Embedding, MLP
+from ARM_Net.utils.entmax import EntmaxBisect
+from ARM_Net.models.layers import Embedding, MLP
 
 
 class SparseAttLayer(nn.Module):

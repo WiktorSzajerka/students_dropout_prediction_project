@@ -7,17 +7,20 @@ import torch.optim as optim
 from torch import nn
 from torch.utils.data import DataLoader
 
-from models import SAINT
-from data_openml import data_prep_train, data_prep_test, DataSetCatCon
-from utils import count_parameters, classification_scores, mean_sq_error
-from augmentations import embed_data_mask
+from saint_main.models import SAINT
+from saint_main.data_openml import data_prep_train, data_prep_test, DataSetCatCon
+from saint_main.utils import count_parameters, classification_scores, mean_sq_error
+from saint_main.augmentations import embed_data_mask
 
 
-def train(
+def train_saint(
     data_path_train,
     data_path_test,
-    categorical_columns,
-    task,             # 'binary' | 'multiclass' | 'regression'
+    categorical_columns=["Marital status", "Application mode", "Course", "Daytime/evening attendance",
+               "Previous qualification", "Mother's qualification", "Father's qualification",
+               "Mother's occupation", "Father's occupation", "Displaced", "Educational special needs",
+               "Debtor","Tuition fees up to date", "Gender", "Scholarship holder", "International"],
+    task="multiclass",             # 'binary' | 'multiclass' | 'regression'
     cont_embeddings='MLP',     # 'MLP' | 'Noemb' | 'pos_singleMLP'
     embedding_size=32,
     transformer_depth=6,
@@ -30,7 +33,7 @@ def train(
     lr=0.0001,
     epochs=100,
     batchsize=256,
-    savemodelroot='./bestmodels',
+    savemodelroot='./saint_models',
     run_name='testrun',
     set_seed=1,
     dset_seed=5,
@@ -271,7 +274,7 @@ def train(
 
 if __name__ == '__main__':
     # Example usage - adjust to your data
-    results = train(
+    results = train_saint(
         data_path_train='data/splits/fold0test.csv',
         data_path_test='data/splits/fold0train.csv',
         categorical_columns=["Marital status", "Application mode", "Course", "Daytime/evening attendance",

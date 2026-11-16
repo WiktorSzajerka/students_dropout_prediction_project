@@ -10,9 +10,9 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from models import create_model, get_config, to_device
-from utils import logger, AverageMeter
-from data_loader import csv_loader
+from ARM_Net.models import create_model, get_config, to_device
+from ARM_Net.utils import logger, AverageMeter
+from ARM_Net.data_loader import csv_loader
 
 
 # ----------------------------------------------------------------------------
@@ -123,7 +123,7 @@ def run_trial(config, train_loaders, test_loader, model_name, max_epochs, metric
 # ----------------------------------------------------------------------------
 # Main
 # ----------------------------------------------------------------------------
-def main(
+def train_arm_net(
     num_samples: int = 1,          # number of random hyper-parameter configs per repeat
     exp_name: str = 'test',        # experiment name used to store logs
     stdout: str = 'log.txt',       # redirect print() output to this file in the log dir, '' / None to disable
@@ -228,4 +228,4 @@ def main(
 
 
 if __name__ == "__main__":
-    main(num_samples=1, train_data_dir=r"data\splits\fold0train.csv" ,test_data_dir=r"data\splits\fold0test.csv", max_epochs=2)
+    train_arm_net(num_samples=1, train_data_dir=r"data\splits\fold0train.csv" ,test_data_dir=r"data\splits\fold0test.csv", max_epochs=2)
