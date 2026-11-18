@@ -8,7 +8,7 @@ import sklearn.preprocessing
 from ARM_Net.utils.uci_utils import nsample_bsz_mapping
 
 
-def csv_loader(csv_path, batch_size=0, valid_perc=0.15, workers=2,
+def csv_loader(csv_path, batch_size=0, valid_perc=0.15, workers=1,
                verbose=True, header='infer', sep=',', seed=0):
     '''
     :param csv_path:        Path to the CSV file (features in all columns but the last, target in the last)
